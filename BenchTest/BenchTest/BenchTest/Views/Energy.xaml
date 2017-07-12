@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BenchTest.Views.Energy"
+                          BackgroundColor="#CEDFE7">
+
+    <Grid >
+        <Grid.Resources>
+            <ResourceDictionary>
+                <GridLength x:Key="dividerThickness">4</GridLength>
+                <Style TargetType="BoxView">
+                    <Setter Property="Color" Value="Accent" />
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="400" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+
+
+        <BoxView Color="DarkCyan"  Grid.Column="0" Grid.Row="0"/>
+        <Label Text="System C"
+ Grid.Row="0" Grid.Column="0"
+               FontSize="Large"
+               />
+
+        <BoxView Color="DarkCyan"  Grid.Column="1" Grid.Row="0"/>
+        <Label Text="System A"
+ Grid.Row="0" Grid.Column="1" 
+               FontSize="Large"
+               />
+
+        <BoxView Color="DarkCyan"  Grid.Column="2" Grid.Row="0"/>
+        <Label Text="System B"
+ Grid.Row="0" Grid.Column="2" 
+               FontSize ="Large"
+               />
+
+
+
+        <Label Text="{Binding EpuCrDCCurrent, StringFormat=' DC Current: {0:F2} A'}"
+               Grid.Column="0" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuCrDCVoltage, StringFormat=' DC Voltage: {0:F2} V'}"
+               Grid.Column="0" Grid.Row="2" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   /> 
+
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid  Grid.Column="0" Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding DrvCrDCPower, StringFormat=' DC Power: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+                <Label Text="{Binding DrvCrPower, StringFormat=' Motor: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+            </Grid>
+
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView  Grid.Column="0" Grid.Row="0"
+                         Margin="1,1,1,1"
+                         HeightRequest="{Binding BoxHightDrvCrDCPowerPositive}"
+                         VerticalOptions="End"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                         HeightRequest="{Binding BoxHightDrvCrDCPowerNegative}"
+                         Margin="1,1,1,1"
+                         VerticalOptions="Start"></BoxView>
+            </Grid>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                        HeightRequest="{Binding BoxHightEpuCrACPower}"
+                     Margin="1,1,1,1"
+                         VerticalOptions="End"></BoxView>
+
+
+            <Label Text="{Binding EpuCrDCPower, StringFormat=' Power: {0:F2} kW'}"
+               Grid.Column="3" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+        </Grid>
+
+        <Label Text="{Binding EpuCrACCurrent, StringFormat=' AC Current: {0:F2} A'}"
+               Grid.Column="0" Grid.Row="4" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuCrACVoltage, StringFormat=' AC Voltage: {0:F2} V'}"
+               Grid.Column="0" Grid.Row="5" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuCrACPower, StringFormat=' AC Power: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="6" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+
+
+
+
+
+
+
+        <Label Text="{Binding EpuArDCCurrent, StringFormat=' DC Current: {0:F2} A'}"
+               Grid.Column="1" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuArDCVoltage, StringFormat=' DC Voltage: {0:F2} V'}"
+               Grid.Column="1" Grid.Row="2" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid  Grid.Column="0" Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding DrvArDCPower, StringFormat=' DC Power: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+                <Label Text="{Binding DrvArPower, StringFormat=' Motor: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+            </Grid>
+
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                         Margin="1,1,1,1"
+                         HeightRequest="{Binding BoxHightDrvArDCPowerPositive}"
+                         VerticalOptions="End"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                         HeightRequest="{Binding BoxHightDrvArDCPowerNegative}"
+                         Margin="1,1,1,1"
+                         VerticalOptions="Start"></BoxView>
+            </Grid>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                        HeightRequest="{Binding BoxHightEpuBrACPower}"
+                     Margin="1,1,1,1"
+                         VerticalOptions="End"></BoxView>
+
+
+            <Label Text="{Binding EpuArDCPower, StringFormat=' Power: {0:F2} kW'}"
+               Grid.Column="3" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+        </Grid>
+
+        <Label Text="{Binding EpuArACCurrent, StringFormat=' AC Current: {0:F2} A'}"
+               Grid.Column="1" Grid.Row="4" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuArACVoltage, StringFormat=' AC Voltage: {0:F2} V'}"
+               Grid.Column="1" Grid.Row="5" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuArACPower, StringFormat=' AC Power: {0:F2} kW'}"
+               Grid.Column="1" Grid.Row="6" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+
+
+
+
+
+
+        <Label Text="{Binding EpuBrDCCurrent, StringFormat=' DC Current: {0:F2} A'}"
+               Grid.Column="2" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuBrDCVoltage, StringFormat=' DC Voltage: {0:F2} V'}"
+               Grid.Column="2" Grid.Row="2" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+        <Grid Grid.Column="2" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid  Grid.Column="0" Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding DrvBrDCPower, StringFormat=' DC Power: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+
+                <Label Text="{Binding DrvBrPower, StringFormat=' Motor: {0:F2} kW'}"
+               Grid.Column="0" Grid.Row="1" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+            </Grid>
+
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="0"
+                         Margin="1,1,1,1"
+                         HeightRequest="{Binding BoxHightDrvBrDCPowerPositive}"
+                         VerticalOptions="End"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+                <BoxView Grid.Column="0" Grid.Row="1"
+                         HeightRequest="{Binding BoxHightDrvBrDCPowerNegative}"
+                         Margin="1,1,1,1"
+                         VerticalOptions="Start"></BoxView>
+            </Grid>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="Black"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                 Color="WhiteSmoke"
+                         Margin="1,1,1,1"
+                         VerticalOptions="FillAndExpand"></BoxView>
+
+            <BoxView Grid.Column="2" Grid.Row="0"
+                        HeightRequest="{Binding BoxHightEpuBrACPower}"
+                     Margin="1,1,1,1"
+                         VerticalOptions="End"></BoxView>
+
+
+            <Label Text="{Binding EpuBrDCPower, StringFormat=' Power: {0:F2} kW'}"
+               Grid.Column="3" Grid.Row="0" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                   />
+        </Grid>
+
+        <Label Text="{Binding EpuBrACCurrent, StringFormat=' AC Current: {0:F2} A'}"
+               Grid.Column="2" Grid.Row="4" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuBrACVoltage, StringFormat=' AC Voltage: {0:F2} V'}"
+               Grid.Column="2" Grid.Row="5" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+        <Label Text="{Binding EpuBrACPower, StringFormat=' AC Power: {0:F2} kW'}"
+               Grid.Column="2" Grid.Row="6" 
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"
+               FontSize="Medium"
+                   />
+
+
+    </Grid>
+</ContentPage>

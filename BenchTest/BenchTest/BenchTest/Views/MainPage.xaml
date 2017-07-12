@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HmiTablet"
+              x:Class="BenchTest.Views.MainPage"
+             BackgroundColor="#CEDFE7">
+
+        <!--<AbsoluteLayout>
+
+
+        <Label Text="{Binding rTtMotorTempKty1A, StringFormat=' Temperature: {0:F2} °C'}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01 ,.0, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualpositionA, StringFormat=' Position: {0:F2}  m'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01,.1, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualtorqueA, StringFormat=' Torque: {0:F2}  Nm'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01, .2, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualvelocityA, StringFormat=' Velocity: {0:F2}  m/s'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01, .3, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01, .4, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch IsEnabled="False" IsToggled="{Binding bSynchronA}" AbsoluteLayout.LayoutBounds=" .*, .42, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+        <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".01, .45, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch IsEnabled="False" IsToggled="{Binding bBrakingResistorA}" AbsoluteLayout.LayoutBounds=" .*, .47, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+        
+        <Label Text="{Binding rTtMotorTempKty1B, StringFormat=' Temperature: {0:F2}  °C'}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".5, .0,  0.3, 0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualpositionB, StringFormat=' Position: {0:F2}  m'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".5, .1, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualtorqueB, StringFormat=' Torque: {0:F2}  Nm'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".5, .2, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                  />
+
+        <Label Text="{Binding rActualvelocityB, StringFormat=' Velocity: {0:F2}  m/s'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".5,  .3, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+
+        <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".51, .4, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch  IsToggled="{Binding bSynchronB}" AbsoluteLayout.LayoutBounds=" .53, .42, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+        <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=".51, .45, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch IsToggled="{Binding bBrakingResistorB}" AbsoluteLayout.LayoutBounds=" .53, .47, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+
+
+
+        <Label Text="{Binding rTtMotorTempKty1C, StringFormat=' Temperature: {0:F2}  °C'}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="1, 0 , 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualpositionC, StringFormat=' Position: {0:F2}  m'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="1, .1, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualtorqueC, StringFormat=' Torque: {0:F2}  Nm'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds=" 1 , .2 ,  0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualvelocityC, StringFormat=' Velocity: {0:F2}  m/s'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="1 , .3 , 0.3,  0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        
+        
+        <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="1, .4, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch IsToggled="{Binding bSynchronC}" AbsoluteLayout.LayoutBounds=" .92, .42, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+        <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="1, .45, 0.3,0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+        <Switch IsToggled="{Binding bBrakingResistorC}" AbsoluteLayout.LayoutBounds=" .92, .47, 0.1,0.02"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+
+        <Image  Source="Capture.PNG" 
+        Scale="2"
+       VerticalOptions="EndAndExpand"
+       HorizontalOptions="CenterAndExpand" 
+               AbsoluteLayout.LayoutBounds=" .5, .7, 0.4,0.4"
+                AbsoluteLayout.LayoutFlags="All" 
+        />
+
+        <BoxView Color="{Binding ColorA}" AbsoluteLayout.LayoutBounds=" .*0, .65, 0.06,0.*"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+        <BoxView Color="{Binding ColorC}" AbsoluteLayout.LayoutBounds=" .855, .65, 0.06,0.*"
+                AbsoluteLayout.LayoutFlags="All" 
+                 />
+
+        <Label Text="{Binding rActualForceA, StringFormat=' {0:F2}  N'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               AbsoluteLayout.LayoutBounds=".29 , .6 , 0.3,  0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+
+        <Label Text="{Binding rActualForceB, StringFormat=' {0:F2}  N'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+               AbsoluteLayout.LayoutBounds=".71 , .6 , 0.3,  0.2"
+                AbsoluteLayout.LayoutFlags="All" 
+                   />
+    </AbsoluteLayout>-->
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <GridLength x:Key="dividerThickness">4</GridLength>
+                <Style TargetType="BoxView">
+                    <Setter Property="Color" Value="Accent" />
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Temperature: "
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="1"
+                   /> 
+                    <Label Text="{Binding rTtMotorTempKty1A}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+               FontSize="Medium"
+                      Grid.Column="2"
+                   /> 
+                    <Label Text=" °C"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Position: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualpositionA, StringFormat='{0:F1}'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+                    Grid.Column="2"
+                   />  
+                    <Label Text="  deg"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Torque: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualtorqueA}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  Nm"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Velocity: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualvelocityA, StringFormat='{0:F1}'}" 
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  1/min"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bSynchronA}" 
+                            Grid.Column="3" HorizontalOptions="Start"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                       Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bBrakingResistorA}" 
+                        HorizontalOptions="Start"
+                        Grid.Column="3"/>
+                </Grid>
+
+            </Grid>
+            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Temperature: "
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="1"
+                   />
+                    <Label Text="{Binding rTtMotorTempKty1B}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+               FontSize="Medium"
+                      Grid.Column="2"
+                   />
+                    <Label Text=" °C"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Position: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualpositionB, StringFormat='{0:F1}'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+                    Grid.Column="2"
+                   />
+                    <Label Text="  deg"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Torque: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualtorqueB}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  Nm"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Velocity: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualvelocityB, StringFormat='{0:F1}'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  1/min"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bSynchronB}" 
+                            Grid.Column="3" HorizontalOptions="Start"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                       Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bBrakingResistorB}" 
+                        HorizontalOptions="Start"
+                        Grid.Column="3"/>
+                </Grid>
+
+            </Grid>
+            
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Temperature: "
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="1"
+                   />
+                    <Label Text="{Binding rTtMotorTempKty1C}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Center"
+               FontSize="Medium"
+                      Grid.Column="2"
+                   />
+                    <Label Text=" °C"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="Start"
+               FontSize="Medium"
+                      Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Position: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualpositionC, StringFormat='{0:F1}'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+                    Grid.Column="2"
+                   />
+                    <Label Text="  deg"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                    Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Torque: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualtorqueC}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  Nm"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Velocity: "
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Label Text="{Binding rActualvelocityC, StringFormat='{0:F1}'}"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center"
+                              FontSize="Medium"
+Grid.Column="2"
+                   />
+                    <Label Text="  1/min"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="3"
+                   />
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Synchron"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bSynchronC}" 
+                            Grid.Column="3" HorizontalOptions="Start"/>
+                </Grid>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Brake"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Start"
+                              FontSize="Medium"
+                       Grid.Column="1"
+                   />
+                    <Switch IsEnabled="False" IsToggled="{Binding bBrakingResistorC}" 
+                        HorizontalOptions="Start"
+                        Grid.Column="3"/>
+                </Grid>
+            </Grid>
+            
+        </Grid>
+        <Image Grid.Row="1" Source="Capture.PNG" 
+        Scale="1.5"
+       VerticalOptions="CenterAndExpand"
+       HorizontalOptions="CenterAndExpand" 
+        />
+
+    </Grid>
+
+</ContentPage>
